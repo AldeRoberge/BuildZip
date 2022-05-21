@@ -49,7 +49,7 @@ namespace VirtualRamen.Build.Editor.Runner
 
                 // Copy zip to Itchio Butler
                 Debug.Log("[PostBuildRunner] Sending game client to Itch.io...");
-                SendToItchIO(zipFilePath, BuildVersion.Version, buildAction.SetupName);
+                SendToItchIO(zipFilePath, BuildVersion.Version, buildAction.ItchIOPlatformName.ToLower(), buildAction.SetupName);
             }
 
             if (buildAction.CopyToGoogleDrive)
@@ -88,17 +88,17 @@ namespace VirtualRamen.Build.Editor.Runner
             return GameConstants.GameName + "-" + platformName + "-" + server + "V" + BuildVersion.Version;
         }
 
-        private static void SendToItchIO(string filePath, string version, string channel)
+        private static void SendToItchIO(string filePath, string version, string platform, string channel)
         {
             Debug.Log("[PostBuildRunner] Sending to Itch.io : " + filePath + " with version : " + version + " and channel : " + channel);
 
             var process = new Process();
             process.StartInfo.FileName = "C:/butler/butler.exe";
-            process.StartInfo.Arguments = "push \"" + filePath + "\" --verbose alderoberge/alien-garden:windows-" + channel.ToLower() + " --userversion " + version;
+            process.StartInfo.Arguments = "push \"" + filePath + "\" --verbose alderoberge/alien-garden:-" + platform + "-" + channel.ToLower() + " --userversion " + version;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
-            
+
             process.Start();
             process.WaitForExit();
             var output = process.StandardOutput.ReadToEnd();

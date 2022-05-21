@@ -9,6 +9,8 @@ namespace VirtualRamen.Build.Editor.BuildActions
 
         public bool IsClient;
 
+        public string ItchIOPlatformName;
+        
         public bool IncrementBuildVersion;
         
         public bool PublishToItchIO;
@@ -21,10 +23,11 @@ namespace VirtualRamen.Build.Editor.BuildActions
         {
         }
 
-        public BuildAction(string setupName, bool isClient, bool incrementBuildVersionAction = false, bool publishToItchIO = false, bool copyToGoogleDrive = false, bool publishOnPlayFlow = false)
+        public BuildAction(string setupName, bool isClient, string itchIOPlatformName, bool incrementBuildVersionAction = false, bool publishToItchIO = false, bool copyToGoogleDrive = false, bool publishOnPlayFlow = false)
         {
             SetupName = setupName;
             IsClient = isClient;
+            ItchIOPlatformName = itchIOPlatformName;
             IncrementBuildVersion = incrementBuildVersionAction;
             PublishToItchIO = publishToItchIO;
             CopyToGoogleDrive = copyToGoogleDrive;

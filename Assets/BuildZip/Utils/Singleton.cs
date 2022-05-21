@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VirtualRamen.Utils
+namespace BuildZip.Utils
 {
     public abstract class Singleton<T> : MonoBehaviour where T : Component
     {

@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using BuildZip.BuildZip;
+using BuildZip.BuildZip.Setup;
+using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -26,14 +28,14 @@ namespace VirtualRamen.Build.Editor.Runner
         private void UpdateCurrentSetup(string setupName)
         {
             Debug.Log("[PreBuildRunner] Setting current setup to '" + setupName + "'");
-            Setup.Setup.SetCurrentSetup(setupName);
+            Setup.SetCurrentSetup(setupName);
         }
 
         private void IncrementBuildVersion()
         {
             Debug.Log("[PreBuildRunner] Incrementing build version.");
-            BuildVersion.BuildVersion.IncrementBuildVersion();
-            PlayerSettings.bundleVersion = BuildVersion.BuildVersion.Version;
+            BuildVersion.IncrementBuildVersion();
+            PlayerSettings.bundleVersion = BuildVersion.Version;
         }
     }
 }

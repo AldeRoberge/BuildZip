@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace VirtualRamen.Build.Setup
+namespace BuildZip.BuildZip.Setup
 {
     public static class Setup
     {

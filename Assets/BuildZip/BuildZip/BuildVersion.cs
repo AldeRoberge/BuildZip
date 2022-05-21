@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using UnityEngine;
 
-namespace VirtualRamen.Build.BuildVersion
+namespace BuildZip.BuildZip
 {
     public static class BuildVersion
     {

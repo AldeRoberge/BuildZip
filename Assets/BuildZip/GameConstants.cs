@@ -1,4 +1,4 @@
-﻿namespace VirtualRamen
+﻿namespace BuildZip
 {
     public class GameConstants
     {

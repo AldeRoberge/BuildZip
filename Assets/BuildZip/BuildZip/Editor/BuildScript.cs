@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using BuildZip.BuildZip.Setup;
 using UnityEditor;
 using VirtualRamen.Build.Editor.BuildActions;
 
@@ -27,7 +28,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Development.Name,
+                SetupName = Setup.Development.Name,
                 IsClient = true,
             });
 
@@ -48,7 +49,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Development.Name,
+                SetupName = Setup.Development.Name,
                 IsClient = false,
             });
 
@@ -73,7 +74,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Testing.Name,
+                SetupName = Setup.Testing.Name,
                 IsClient = true,
                 PublishToItchIO = true,
                 IncrementBuildVersion = true
@@ -96,7 +97,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Testing.Name,
+                SetupName = Setup.Testing.Name,
                 IsClient = false,
                 PublishToItchIO = false,
                 IncrementBuildVersion = false
@@ -124,7 +125,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Production.Name,
+                SetupName = Setup.Production.Name,
                 IsClient = true,
                 PublishToItchIO = true
             });
@@ -146,7 +147,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Setup.Production.Name,
+                SetupName = Setup.Production.Name,
                 IsClient = false,
             });
 

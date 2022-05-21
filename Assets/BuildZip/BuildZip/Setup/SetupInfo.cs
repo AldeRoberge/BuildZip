@@ -1,4 +1,4 @@
-﻿namespace VirtualRamen.Build.Setup
+﻿namespace BuildZip.BuildZip.Setup
 {
     public class SetupInfo
     {

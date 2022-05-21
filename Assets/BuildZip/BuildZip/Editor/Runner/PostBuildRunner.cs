@@ -2,10 +2,11 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using BuildZip;
+using BuildZip.BuildZip;
 using Unity.VisualScripting.IonicZip;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using VirtualRamen.Build.BuildVersion;
 using VirtualRamen.Build.Editor.BuildActions;
 using Debug = UnityEngine.Debug;
 
@@ -48,7 +49,7 @@ namespace VirtualRamen.Build.Editor.Runner
 
                 // Copy zip to Itchio Butler
                 Debug.Log("[PostBuildRunner] Sending game client to Itch.io...");
-                SendToItchIO(zipFilePath, BuildVersion.BuildVersion.Version, buildAction.SetupName);
+                SendToItchIO(zipFilePath, BuildVersion.Version, buildAction.SetupName);
             }
 
             if (buildAction.CopyToGoogleDrive)
@@ -84,7 +85,7 @@ namespace VirtualRamen.Build.Editor.Runner
             string platform = EditorUserBuildSettings.activeBuildTarget.ToString();
             string platformName = GetFriendlyPlatformName(platform);
             string server = isClient ? "" : "Server-";
-            return GameConstants.GameName + "-" + platformName + "-" + server + "V" + BuildVersion.BuildVersion.Version;
+            return GameConstants.GameName + "-" + platformName + "-" + server + "V" + BuildVersion.Version;
         }
 
         private static void SendToItchIO(string filePath, string version, string channel)

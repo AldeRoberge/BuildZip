@@ -2,6 +2,10 @@
 
 namespace BuildZip.BuildZip.Editor.BuildActions
 {
+    /// <summary>
+    /// A list of pre and post build actions to be performed by the build system.
+    /// See <see cref="BuildScript"/> for more information.
+    /// </summary>
     [Serializable]
     public class BuildAction
     {

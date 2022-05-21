@@ -5,6 +5,9 @@ using UnityEditor;
 
 namespace BuildZip.BuildZip.Editor
 {
+    /// <summary>
+    /// Sets hints for the PreBuildRunner and PostBuildRunner and builds the project.
+    /// </summary>
     public static class BuildScript
     {
         [MenuItem("Build/Build All")]

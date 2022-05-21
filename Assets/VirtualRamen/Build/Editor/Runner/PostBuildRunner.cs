@@ -26,7 +26,7 @@ namespace VirtualRamen.Build.Editor.Runner
 
             if (buildAction.PublishOnPlayFlow)
             {
-                Debug.LogError("[PostBuildRunner] PublishOnPlayFlow, will not perform any post build actions.");
+                Debug.LogWarning("[PostBuildRunner] PublishOnPlayFlow is set to true. Will not perform any post build actions as PlayFlow takes care of building and publishing the server.");
                 return;
             }
 
@@ -42,12 +42,12 @@ namespace VirtualRamen.Build.Editor.Runner
             {
                 if (!buildAction.IsClient)
                 {
-                    Debug.LogError("[PostBuildRunner] ItchIO is only supported for client builds.");
+                    Debug.LogWarning("[PostBuildRunner] ItchIO is only supported for client builds.");
                     return;
                 }
 
                 // Copy zip to Itchio Butler
-                Debug.Log("[PostBuildRunner] Copying to Itch.io Butler...");
+                Debug.Log("[PostBuildRunner] Sending game client to Itch.io...");
                 SendToItchIO(zipFilePath, BuildVersion.BuildVersion.Version, buildAction.SetupName);
             }
 
@@ -97,8 +97,7 @@ namespace VirtualRamen.Build.Editor.Runner
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
-
-
+            
             process.Start();
             process.WaitForExit();
             var output = process.StandardOutput.ReadToEnd();

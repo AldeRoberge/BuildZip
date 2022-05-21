@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace VirtualRamen.Build.Editor.BuildActions
+namespace BuildZip.BuildZip.Editor.BuildActions
 {
     [FilePath("VirtualRamen/BuildActions.asset", FilePathAttribute.Location.PreferencesFolder)]
     public class BuildActions : ScriptableSingleton<BuildActions>

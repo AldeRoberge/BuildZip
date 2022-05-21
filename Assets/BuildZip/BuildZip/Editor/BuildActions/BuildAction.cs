@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VirtualRamen.Build.Editor.BuildActions
+namespace BuildZip.BuildZip.Editor.BuildActions
 {
     [Serializable]
     public class BuildAction

@@ -1,12 +1,10 @@
-﻿using BuildZip.BuildZip;
-using BuildZip.BuildZip.Setup;
+﻿using BuildZip.BuildZip.Editor.BuildActions;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
-using VirtualRamen.Build.Editor.BuildActions;
 
-namespace VirtualRamen.Build.Editor.Runner
+namespace BuildZip.BuildZip.Editor.Runner
 {
     // Runs actions before the build starts
     public class PreBuildRunner : IPreprocessBuildWithReport
@@ -28,7 +26,7 @@ namespace VirtualRamen.Build.Editor.Runner
         private void UpdateCurrentSetup(string setupName)
         {
             Debug.Log("[PreBuildRunner] Setting current setup to '" + setupName + "'");
-            Setup.SetCurrentSetup(setupName);
+            Setup.Setup.SetCurrentSetup(setupName);
         }
 
         private void IncrementBuildVersion()

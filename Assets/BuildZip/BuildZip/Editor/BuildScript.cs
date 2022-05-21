@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
-using BuildZip.BuildZip.Setup;
+using BuildZip.BuildZip.Editor.BuildActions;
 using UnityEditor;
-using VirtualRamen.Build.Editor.BuildActions;
 
-namespace VirtualRamen.Build.Editor
+namespace BuildZip.BuildZip.Editor
 {
     public static class BuildScript
     {
@@ -28,7 +27,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Development.Name,
+                SetupName = Setup.Setup.Development.Name,
                 IsClient = true,
                 ItchIOPlatformName = "Windows"
             });
@@ -50,7 +49,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Development.Name,
+                SetupName = Setup.Setup.Development.Name,
                 IsClient = false,
                 ItchIOPlatformName = "Windows"
             });
@@ -76,7 +75,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Testing.Name,
+                SetupName = Setup.Setup.Testing.Name,
                 IsClient = true,
                 PublishToItchIO = true,
                 IncrementBuildVersion = true,
@@ -100,7 +99,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Testing.Name,
+                SetupName = Setup.Setup.Testing.Name,
                 PublishOnPlayFlow = true,
                 IsClient = false,
                 PublishToItchIO = false,
@@ -123,7 +122,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Production.Name,
+                SetupName = Setup.Setup.Production.Name,
                 IsClient = true,
                 PublishToItchIO = true,
                 ItchIOPlatformName = "Windows"
@@ -146,7 +145,7 @@ namespace VirtualRamen.Build.Editor
         {
             BuildActions.BuildActions.instance.SetPostBuildAction(new BuildAction()
             {
-                SetupName = Setup.Production.Name,
+                SetupName = Setup.Setup.Production.Name,
                 IsClient = false
             });
 

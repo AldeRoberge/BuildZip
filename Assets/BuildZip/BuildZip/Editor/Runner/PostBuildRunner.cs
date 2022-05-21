@@ -1,16 +1,13 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using BuildZip;
-using BuildZip.BuildZip;
+using BuildZip.BuildZip.Editor.BuildActions;
 using Unity.VisualScripting.IonicZip;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using VirtualRamen.Build.Editor.BuildActions;
 using Debug = UnityEngine.Debug;
 
-namespace VirtualRamen.Build.Editor.Runner
+namespace BuildZip.BuildZip.Editor.Runner
 {
     /// <summary>
     /// After Unity builds the game, this will copy the files to a folder with the build version as a name.

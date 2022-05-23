@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
+using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,7 +20,11 @@ namespace BuildZip.BuildZip.Setup.Editor
             var setupPort = setupInfo.Port;
             var setupAddress = setupInfo.Address;
 
-            EditorGUILayout.LabelField("Current setup : " + setupName, EditorStyles.largeLabel);
+            // Horizontal line separator
+            EditorGUILayout.Separator();
+
+            // Set the color of the label to red
+            GUILayout.Label("Current Setup : " + setupName, SirenixGUIStyles.BoldTitle);
 
             // Horizontal line separator
             EditorGUILayout.Separator();
